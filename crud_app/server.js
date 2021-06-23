@@ -1,23 +1,9 @@
-/*
-const express=require('express');
 
-
-const app=express();
-
-
-const PORT =process.env.PORT || 8080;
-
-app.get('/', (req, res)=>{
-    res.send("Crud Application");
-})
-
-app.listen(PORT, ()=>{console.log('Server is running on http://localhost:'+PORT)});
-*/
 var express= require("express");
 var bodyParser= require("body-parser");
 
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/SignUp",{
+mongoose.connect("mongodb://localhost:27017/Feedback",{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -38,23 +24,21 @@ app.use(express.urlencoded({
 	extended: true
 }));
 
-app.post('/sign_up', function(req,res){
+app.post('/Feedback', function(req,res){
 	var username = req.body.username;
 	var email =req.body.email;
-	var pass1 = req.body.pswd1;
-    var pass2 = req.body.pswd2;
+	var msg=req.body.msg;
 	
 
 	var data = {
-		"username": username,
+		"username":username,
 		"email": email,
-		"password1": pass1,
-        "password2": pass2,
-		
+		"msg": msg,
+        
 	}
 db.collection('details').insertOne(data,function(err, collection){
 		if (err) throw err;
-		console.log("Sign Up Successful");
+		console.log("Feedback Successful");
         
 			
 	});
