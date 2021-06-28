@@ -49,7 +49,7 @@ var x=document.getElementById("login")
           }
         
           function sendData(){
-            
+           
 
             fetch('http://localhost:3000/sign_up', {
               method: 'POST',
@@ -69,3 +69,4 @@ var x=document.getElementById("login")
             })
             redirect();
           }
+          

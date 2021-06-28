@@ -1,4 +1,3 @@
-
 var express= require("express");
 var bodyParser= require("body-parser");
 
@@ -25,7 +24,7 @@ app.use(express.urlencoded({
 }));
 
 app.post('/Feedback', function(req,res){
-	var username = req.body.username;
+	var username = req.body.name;
 	var email =req.body.email;
 	var msg=req.body.msg;
 	
@@ -33,22 +32,22 @@ app.post('/Feedback', function(req,res){
 	var data = {
 		"username":username,
 		"email": email,
-		"msg": msg,
+		"Feedback": msg,
         
 	}
 db.collection('details').insertOne(data,function(err, collection){
 		if (err) throw err;
-		console.log("Feedback Successful");
+		console.log(data);
         
 			
 	});
 		
-	return res.redirect('Home/Home.html');
+	return res.redirect('Form/form.html');
 })
 
 
 
-app.get('/',function(req,res){
+app.get('/Feedback',function(req,res){
 res.set({
 	'Access-control-Allow-Origin': '*'
 	});

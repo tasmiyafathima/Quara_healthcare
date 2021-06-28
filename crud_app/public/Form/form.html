@@ -59,13 +59,13 @@
              <div class="card-content">
                <form id="myform" action="/Feedback" method="POST">
                  <div data-aos="flip-right" data-aos-delay="300">
-                  <input type="text" id="name" placeholder="Name"  pattern="[a-zA-Z][a-zA-Z ]{2,}" required>
+                  <input type="text" id="name" placeholder="Name" name="name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required>
                  </div>
                  <div data-aos="flip-right" data-aos-delay="400">
-                  <input type="text" id="email" placeholder="Email" required>
+                  <input type="text" id="email" name="email" placeholder="Email" required>
                  </div>
                  <div data-aos="flip-right" data-aos-delay="500">
-                  <textarea type="text" id="msg" placeholder="Message" required></textarea>
+                  <textarea type="text" id="msg" name="msg" placeholder="Message" required></textarea>
                  </div>
                  <input id="submit" type="submit" onclick="sendData()" data-aos="flip-right" data-aos-delay="600" class="btn waves-effect">
                  

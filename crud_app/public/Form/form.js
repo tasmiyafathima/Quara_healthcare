@@ -206,10 +206,10 @@ function redirect(){
     window.location="../Home/Home.html"
   }
 
-function sendData(){
-            
+  function sendData(){
+    
 
-    fetch('http://localhost:3000/Feedback', {
+    fetch('http://localhost:3000/SignUp', {
       method: 'POST',
       body: JSON.stringify({
           name: document.getElementById('name').value,
